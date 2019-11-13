@@ -14,9 +14,9 @@ class RestApi extends Controller {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
 		
 		if ( !empty($id) ) {
-	        return ['products' => '$entry', 'id' => $this->app['config']['rezdy']['api_key']];
+	        return ['products' => '$entry', 'id' => $this->app['config']];
 		} else {
-			return ['products' => $this->app['config']['rezdy']['api_key']];
+			return ['products' => $this->app['config']];
 		}
     }
 
