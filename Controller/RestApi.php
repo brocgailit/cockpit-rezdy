@@ -21,7 +21,7 @@ class RestApi extends Controller {
     public function products($id = '') {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
 
-		$response = $client->request('GET', $id, [
+		$response = $client->request('GET', 'https://api.rezdy.com/v1/products/', [
 			'query' => ['apiKey' => $this->$key]
 		]);
 		
