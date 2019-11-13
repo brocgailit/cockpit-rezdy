@@ -30,7 +30,7 @@ class RestApi extends Controller {
 		// Accepted Query Parameters
 
 		$query = $this->query($id, [
-			'limit' => $this->app->param('limit') ?: 10,
+			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
