@@ -48,7 +48,7 @@ class RestApi extends Controller {
 	}
 	
 	public function pickups($product_code) {
-		if (!empty($product_code)) {
+		if (empty($product_code)) {
 			return ['error' => 'You must provide a product code.'];
 		}
 
