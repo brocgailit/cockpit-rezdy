@@ -16,13 +16,13 @@ class ResourcesApi extends Controller {
 
     public function resources($resource_id = '') {
 
-		$res = $this->query($resource_id, [
+		$res = $this->rezdy->query($resource_id, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
 
-		return $this->renderResponse($res, function($res) {
+		return $this->rezdy->renderResponse($res, function($res) {
 			if ( !empty($resource_id) ) {
 				return ['resource' => $res->resource];
 			}
