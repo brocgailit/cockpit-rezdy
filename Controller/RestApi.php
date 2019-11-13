@@ -6,7 +6,7 @@ use \LimeExtra\Controller;
 use GuzzleHttp\Client;
 
 $client = new Client([
-	'base_uri' => 'https://api.rezdy.com/v1/products'
+	'base_uri' => 'https://api.rezdy.com/v1/products/'
 ]);
 
 $key = $this->app['config']['rezdy']['api_key'];
