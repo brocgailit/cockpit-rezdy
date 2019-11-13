@@ -12,7 +12,11 @@ $client = new Client([
 // https://api.rezdy.com/v1/products/${productCode}?apiKey=${REZDY_KEY}
 
 class RestApi extends Controller {
-	$key = $this->app['config']['rezdy']['api_key'];
+	private $key;
+
+	public function __construct() {
+		$this->$key = $this->app['config']['rezdy']['api_key'];
+	}
 
     public function products($id = '') {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
