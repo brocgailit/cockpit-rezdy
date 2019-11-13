@@ -58,7 +58,7 @@ class RestApi extends Controller {
 		if ( !$status->success ) {
 			return $status;
 		}
-		return ['pickups' => $response->pickups];
+		return ['pickupLocations' => $response->pickupLocations];
 	}
 
 }
