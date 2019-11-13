@@ -26,24 +26,23 @@ class RestApi extends Controller {
 		return json_decode($response->getBody());
 	}
 
-    public function products($id = '') {
-		// Accepted Query Parameters
+    public function products($product_code = '') {
 
-		$query = $this->query($id, [
+		$response = $this->query($product_code, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
 
-		$status = $query->requestStatus;
+		$status = $response->requestStatus;
 
 		if ( !$status->success ) {
 			return $status;		
 		}
-		if ( !empty($id) ) {
-		    return ['product' => $query->product];
+		if ( !empty($product_code) ) {
+		    return ['product' => $response->product];
 		} else {
-			return ['products' => $query->products];
+			return ['products' => $response->products];
 		}
     }
 
