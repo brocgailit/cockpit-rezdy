@@ -1,14 +1,19 @@
 <?php
 
-namespace MyAddon\Controller;
+namespace Rezdy\Controller;
 
 use \LimeExtra\Controller;
 
-class RestApi extends Controller {
-    public function products() {
-        // $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
+$client = new GuzzleHttp\Client();
 
-        return ['product' => '$entry', 'id' => '$id'];
+class RestApi extends Controller {
+    public function products($id) {
+        // $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
+		if ( !empty($id) ) {
+	        return ['products' => '$entry', 'id' => $id];
+		} else {
+			return ['products' => 'farts'];
+		}
     }
 
 }

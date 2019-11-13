@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 $name = 'Rezdy';
 
 if (!isset($app['modules'][strtolower($name)])) {
