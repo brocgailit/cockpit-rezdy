@@ -33,7 +33,7 @@ class RestApi extends Controller {
 			return $status;		
 		}
 
-		return $return_fn;
+		return $return_fn();
 	}
 
     public function products($product_code = '') {
