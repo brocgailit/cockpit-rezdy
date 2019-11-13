@@ -26,6 +26,16 @@ class RestApi extends Controller {
 		return json_decode($response->getBody());
 	}
 
+	private function renderResponse($response, $return_fn) {
+		$status = $response->requestStatus;
+
+		if ( !$status->success ) {
+			return $status;		
+		}
+
+		return $return_fn;
+	}
+
     public function products($product_code = '') {
 
 		$response = $this->query($product_code, [
@@ -34,17 +44,12 @@ class RestApi extends Controller {
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
 
-		$status = $response->requestStatus;
-
-		if ( !$status->success ) {
-			return $status;		
-		}
-
-		if ( !empty($product_code) ) {
-		    return ['product' => $response->product];
-		}
-		
-		return ['products' => $response->products];
+		return $this->renderResponse($response, function() {
+			if ( !empty($product_code) ) {
+				return ['product' => $response->product];
+			}
+			return ['products' => $response->products];
+		});
 	}
 	
 	public function pickups($product_code) {
