@@ -8,11 +8,9 @@ use GuzzleHttp\Client;
 class RestApi extends Controller {
 	private $api_key;
 	private $client;
-	private $options;
 
 	public function __construct($options) {
 		parent::__construct($options);
-		$this->options = $options;
 		$this->api_key = $this->app['config']['rezdy']['api_key'];
 		$this->client = new Client([
 			'base_uri' => 'https://api.rezdy.com/v1/products/'
