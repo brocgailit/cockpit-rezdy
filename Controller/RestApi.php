@@ -5,17 +5,17 @@ namespace Rezdy\Controller;
 use \LimeExtra\Controller;
 use GuzzleHttp\Client;
 
-$client = new Client([
-	'base_uri' => 'https://api.rezdy.com/v1/products/'
-]);
-
 // https://api.rezdy.com/v1/products/${productCode}?apiKey=${REZDY_KEY}
 
 class RestApi extends Controller {
 	private $key;
+	private $client;
 
 	public function __construct() {
 		$this->$key = $this->app['config']['rezdy']['api_key'];
+		$this->$client = new Client([
+			'base_uri' => 'https://api.rezdy.com/v1/products/'
+		]);
 	}
 
     public function products($id = '') {
