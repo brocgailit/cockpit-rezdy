@@ -28,11 +28,13 @@ class RestApi extends Controller {
 
     public function products($id = '') {
 		// Accepted Query Parameters
-		$limit = $this->app->param('limit');
-		$search = $this->app->param('search');
-		$offset = $this->app->param('offset');
 
-		$query = $this->query($id);
+		$query = $this->query($id, [
+			'limit' => $this->app->param('limit') ?: 10,
+			'search' => $this->app->param('search') ?: '',
+			'offset' => $this->app->param('offset') ?: 0,
+		]);
+
 		$status = $query->requestStatus;
 
 		if ( !$status->success ) {
