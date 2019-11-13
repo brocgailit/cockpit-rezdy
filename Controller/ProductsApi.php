@@ -5,7 +5,7 @@ namespace Rezdy\Controller;
 use \LimeExtra\Controller;
 use GuzzleHttp\Client;
 
-class RestApi extends Controller {
+class ProductsApi extends Controller {
 	private $api_key;
 	private $client;
 
