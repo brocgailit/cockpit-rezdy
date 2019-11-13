@@ -6,7 +6,6 @@ use \LimeExtra\Controller;
 use Rezdy\Controller\RezdyEndpoint;
 
 class ResourcesApi extends Controller {
-	private $api_key;
 	private $rezdy;
 
 	public function __construct($options) {

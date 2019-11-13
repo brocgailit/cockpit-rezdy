@@ -24,8 +24,6 @@ class RezdyEndpoint {
 
 	public function renderResponse($res, $return_fn) {
 
-		return $this->app['config'];
-
 		$status = $res->requestStatus;
 
 		if ( !$status->success ) {
