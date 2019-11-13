@@ -22,7 +22,7 @@ class RestApi extends Controller {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
 
 		$response = $client->get($id, [
-			'query' => ['apiKey' => $key]
+			'query' => ['apiKey' => $this->$key]
 		]);
 		
 		if ( !empty($id) ) {
