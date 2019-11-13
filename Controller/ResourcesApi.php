@@ -3,7 +3,7 @@
 namespace Rezdy\Controller;
 
 use \LimeExtra\Controller;
-use RezdyEndpoint;
+use Rezdy\Controller\RezdyEndpoint;
 
 class ResourcesApi extends Controller {
 	private $api_key;
