@@ -21,9 +21,9 @@ class RestApi extends Controller {
     public function products($id = '') {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
 
-		$response = $client->get($id, [
+		/* $response = $client->get($id, [
 			'query' => ['apiKey' => $this->$key]
-		]);
+		]); */
 		
 		if ( !empty($id) ) {
 	        return ['products' => '$entry', 'id' => $id];
