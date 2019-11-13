@@ -20,35 +20,35 @@ class RestApi extends Controller {
 	}
 
 	private function query($endpoint = '', $options = []) {
-		$response = $this->client->request('GET', $endpoint, [
+		$res = $this->client->request('GET', $endpoint, [
 			'query' => array_merge(['apiKey' => $this->api_key], $options)
 		]);
-		return json_decode($response->getBody());
+		return json_decode($res->getBody());
 	}
 
-	private function renderResponse($response, $return_fn) {
-		$status = $response->requestStatus;
+	private function renderResponse($res, $return_fn) {
+		$status = $res->requestStatus;
 
 		if ( !$status->success ) {
 			return $status;		
 		}
 
-		return $return_fn($response);
+		return $return_fn($res);
 	}
 
     public function products($product_code = '') {
 
-		$response = $this->query($product_code, [
+		$res = $this->query($product_code, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
 
-		return $this->renderResponse($response, function($response) {
+		return $this->renderResponse($res, function($res) {
 			if ( !empty($product_code) ) {
-				return ['product' => $response->product];
+				return ['product' => $res->product];
 			}
-			return ['products' => $response->products];
+			return ['products' => $res->products];
 		});
 	}
 	
@@ -57,13 +57,11 @@ class RestApi extends Controller {
 			return ['error' => 'You must provide a product code.'];
 		}
 
-		$response = $this->query($product_code . '/pickups');
-		$status = $response->requestStatus;
+		$res = $this->query($product_code . '/pickups');
 
-		if ( !$status->success ) {
-			return $status;
-		}
-		return ['pickupLocations' => $response->pickupLocations];
+		return $this->renderResponse($res, function($res) {
+			return ['pickupLocations' => $res->pickupLocations];
+		});
 	}
 
 }
