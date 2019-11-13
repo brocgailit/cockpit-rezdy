@@ -10,7 +10,7 @@ class ResourcesApi extends Controller {
 
 	public function __construct($options) {
         parent::__construct($options);
-        $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/resources/');
+        $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/resources/', $this->app['config']['rezdy']['api_key']);
 	}
 
     public function resources($resource_id = '') {

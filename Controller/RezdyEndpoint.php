@@ -8,8 +8,8 @@ class RezdyEndpoint {
 	public $api_key;
 	private $client;
 
-	public function __construct($base_uri) {
-		$this->api_key = $this->app['config']['rezdy']['api_key'];
+	public function __construct($base_uri, $api_key) {
+		$this->api_key = $api_key;
 		$this->client = new Client([
 			'base_uri' => $base_uri
 		]);

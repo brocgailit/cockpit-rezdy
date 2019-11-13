@@ -10,7 +10,7 @@ class ProductsApi extends Controller {
 
 	public function __construct($options) {
 		parent::__construct($options);
-        $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/products/');
+        $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/products/', $this->app['config']['rezdy']['api_key']);
 	}
 
     public function products($product_code = '') {
