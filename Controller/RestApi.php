@@ -39,12 +39,27 @@ class RestApi extends Controller {
 		if ( !$status->success ) {
 			return $status;		
 		}
+
 		if ( !empty($product_code) ) {
 		    return ['product' => $response->product];
-		} else {
-			return ['products' => $response->products];
 		}
-    }
+		
+		return ['products' => $response->products];
+	}
+	
+	public function pickups($product_code) {
+		if (!empty($product_code)) {
+			return ['error' => 'You must provide a product code.'];
+		}
+
+		$response = $this->query($product_code . '/pickups');
+		$status = $response->requestStatus;
+
+		if ( !$status->success ) {
+			return $status;
+		}
+		return ['pickups' => $response->pickups];
+	}
 
 }
 
