@@ -22,9 +22,9 @@ class RestApi extends Controller {
 		]);
 		
 		if ( !empty($id) ) {
-	        return ['products' => '$entry', 'id' => $response->getBody()];
+	        return ['products' => '$entry', 'id' => $response->getStatusCode()];
 		} else {
-			return ['products' => $response->getBody()];
+			return ['products' => $response->getStatusCode()];
 		}
     }
 
