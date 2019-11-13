@@ -13,7 +13,7 @@ class ProductsApi extends Controller {
         $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/products/', $this->app['config']['rezdy']['api_key']);
 	}
 
-    public function products($product_code = '') {
+    public function index($product_code = '') {
 
 		$res = $this->rezdy->query($product_code, [
 			'limit' => $this->app->param('limit') ?: 100,
