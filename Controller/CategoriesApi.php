@@ -5,7 +5,7 @@ namespace Rezdy\Controller;
 use \LimeExtra\Controller;
 use Rezdy\Controller\RezdyEndpoint;
 
-class ResourcesApi extends Controller {
+class CategoriesApi extends Controller {
 	private $rezdy;
 
 	public function __construct($options) {
