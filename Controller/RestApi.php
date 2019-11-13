@@ -45,7 +45,6 @@ class RestApi extends Controller {
 		]);
 
 		return $this->renderResponse($response, function($response) {
-			return $response->product;
 			if ( !empty($product_code) ) {
 				return ['product' => $response->product];
 			}
