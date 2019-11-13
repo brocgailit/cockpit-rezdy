@@ -4,7 +4,7 @@ namespace Rezdy\Controller;
 
 use \LimeExtra\Controller;
 
-$client = new GuzzleHttp\Client();
+// $client = new GuzzleHttp\Client();
 
 class RestApi extends Controller {
     public function products($id) {
