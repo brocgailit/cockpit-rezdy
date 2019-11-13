@@ -33,7 +33,7 @@ class RestApi extends Controller {
 			return $status;		
 		}
 
-		return $return_fn();
+		return $return_fn($response);
 	}
 
     public function products($product_code = '') {
@@ -44,8 +44,8 @@ class RestApi extends Controller {
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
 
-		return $this->renderResponse($response, function() {
-			return 'this is just a test';
+		return $this->renderResponse($response, function($response) {
+			return $response->product;
 			if ( !empty($product_code) ) {
 				return ['product' => $response->product];
 			}
