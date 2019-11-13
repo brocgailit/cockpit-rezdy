@@ -20,7 +20,7 @@ class CategoriesApi extends Controller {
 
 		$res = $this->rezdy->query($category_id, [
 			'search' => $this->app->param('search') ?: '',
-			'visible' => $this->app->param('visible') ?: true,
+			'visible' => $this->app->param('visible') ?: null,
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
