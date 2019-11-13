@@ -9,3 +9,10 @@ Install Cockpit CMS addon by extracting to the addons folder (/addons/Rezdy)
 $ cd /addons/Rezdy
 $ composer install
 ```
+
+### Add Rezdy API Key to Config
+
+```
+rezdy:
+    api_key: YOUR_API_KEY
+```
