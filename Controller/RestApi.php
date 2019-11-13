@@ -17,16 +17,12 @@ class RestApi extends Controller {
     public function products($id = '') {
 		// $entry = $this->app->module('collections')->findOne('Projects', ['_id' => $id]);
 
-		return $key;
 
-		$response = $client->get($id, [
-			'query' => ['apiKey' => $key]
-		]);
 		
 		if ( !empty($id) ) {
-	        return ['products' => '$entry', 'id' => $id];
+	        return ['products' => '$entry', 'id' => $key];
 		} else {
-			return ['products' => $id];
+			return ['products' => $key];
 		}
     }
 
