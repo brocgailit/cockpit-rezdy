@@ -15,6 +15,8 @@ class ProductsApi extends Controller {
 
     public function index($product_code = '') {
 
+		return $product_code;
+
 		$res = $this->rezdy->query($product_code, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
