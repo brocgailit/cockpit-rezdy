@@ -13,11 +13,9 @@ class ProductsApi extends Controller {
         $this->rezdy = new RezdyEndpoint('https://api.rezdy.com/v1/products/', $this->app['config']['rezdy']['api_key']);
 	}
 
-    public function index($product_code = '') {
+    public function index() {
 
-		return $product_code;
-
-		$res = $this->rezdy->query($product_code, [
+		$res = $this->rezdy->query('', [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
@@ -28,6 +26,21 @@ class ProductsApi extends Controller {
 				return ['product' => $res->product];
 			}
 			return ['products' => $res->products];
+		});
+	}
+
+	public function product($product_code) {
+		if (empty($product_code)) {
+			return ['error' => 'You must provide a product code.'];
+		}
+		$res = $this->rezdy->query($product_code, [
+			'limit' => $this->app->param('limit') ?: 100,
+			'search' => $this->app->param('search') ?: '',
+			'offset' => $this->app->param('offset') ?: 0,
+		]);
+
+		return $this->rezdy->renderResponse($res, function($res) {
+			return ['product' => $res->product];
 		});
 	}
 	
