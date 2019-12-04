@@ -3,6 +3,7 @@
 namespace Rezdy\Controller;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
 
 class RezdyEndpoint {
 	public $api_key;

@@ -3,7 +3,6 @@
 namespace Rezdy\Controller;
 
 use \LimeExtra\Controller;
-use GuzzleHttp\Psr7;
 use Rezdy\Controller\RezdyEndpoint;
 
 class AvailabilityApi extends Controller {
