@@ -3,6 +3,7 @@
 namespace Rezdy\Controller;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\QueryString;
 
 class RezdyEndpoint {
 	public $api_key;
@@ -19,7 +20,14 @@ class RezdyEndpoint {
 		/* $res = $this->client->request('GET', $endpoint, [
 			'query' => array_merge(['apiKey' => $this->api_key], $options)
 		]); */
-		$q = "?apiKey=".$this->api_key."&productCode=P4S1Q2&productCode=P8JS90&startTimeLocal=2019-12-03 09:30:00&endTimeLocal=2019-12-05 23:59:59";
+
+		$q = new QueryString(array(
+			'apiKey' => $this->api_key
+			'productCode' => array('P4S1Q2', 'P8JS90'),
+			'startTimeLocal' => '2019-12-03 09:30:00',
+			'endTimeLocal' => '2019-12-05 23:59:59'
+		));
+		$q->setAggregateFunction(array($q, 'aggregateUsingDuplicates'));
 		$res = $this->client->request('GET', $endpoint, [
 			'query' => $q
 		]);
