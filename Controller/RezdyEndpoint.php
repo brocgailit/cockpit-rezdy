@@ -16,10 +16,9 @@ class RezdyEndpoint {
 	}
 
 	public function query($endpoint = '', $options = []) {
-
-		$q = \GuzzleHttp\Psr7\build_query(array_merge(['apiKey' => $this->api_key], $options));
-		return $q;
-		$res = $this->client->request('GET', $endpoint . '?' . $q);
+		$res = $this->client->request('GET', $endpoint, [
+			'query' => array_merge(['apiKey' => $this->api_key], $options)
+		]);
 		return json_decode($res->getBody());
 	}
 
