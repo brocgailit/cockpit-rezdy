@@ -39,7 +39,7 @@ class AvailabilityApi extends Controller {
 		$res = $this->rezdy->query('?productCode=PGLPPB', $query);
 
 		return $this->rezdy->renderResponse($res, function($res) {
-			return ['sessions' => $res->sessions];
+			return ['sessions' => $res];
 		});
 	}
 }
