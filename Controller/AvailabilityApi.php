@@ -37,7 +37,7 @@ class AvailabilityApi extends Controller {
 		$res = $this->rezdy->query('', $query);
 
 		return $this->rezdy->renderResponse($res, function($res) {
-			return ['sessions' => $res->sessions];
+			return ['sessions' => $res];
 		});
 	}
 }
