@@ -40,16 +40,6 @@ class AvailabilityApi extends Controller {
 		$res = $this->rezdy->query('', $query);
 
 		return $this->rezdy->renderResponse($res, function($res) {
-			return [
-				'q' => Psr7\build_query([
-					'startTimeLocal' => $this->app->param('startTimeLocal'),
-					'endTimeLocal' => $this->app->param('endTimeLocal'),
-					'productCode' => array($this->app->param('productCode'), 'artsandfartsandcrafts'),
-					'minAvailability' => $this->app->param('minAvailability') ?: 0,
-					'limit' => $this->app->param('limit') ?: 100,
-					'offset' => $this->app->param('offset') ?: 0
-				])
-			];
 			return ['sessions' => $res];
 		});
 	}

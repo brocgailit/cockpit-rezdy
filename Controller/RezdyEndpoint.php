@@ -16,8 +16,9 @@ class RezdyEndpoint {
 	}
 
 	public function query($endpoint = '', $options = []) {
+		$q = Psr7\build_query(array_merge(['apiKey' => $this->api_key], $options));
 		$res = $this->client->request('GET', $endpoint, [
-			'query' => array_merge(['apiKey' => $this->api_key], $options)
+			'query' => $q
 		]);
 		return json_decode($res->getBody());
 	}
