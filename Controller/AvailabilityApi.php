@@ -37,7 +37,7 @@ class AvailabilityApi extends Controller {
 			'offset' => $this->app->param('offset') ?: 0
 		];
 
-		$res = $this->rezdy->query('?productCode=PGLPPB', $query);
+		$res = $this->rezdy->query('', $query);
 
 		return $this->rezdy->renderResponse($res, function($res) {
 			$q = Psr7\build_query($query);
