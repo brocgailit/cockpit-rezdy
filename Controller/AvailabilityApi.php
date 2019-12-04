@@ -31,6 +31,7 @@ class AvailabilityApi extends Controller {
 			'startTimeLocal' => $this->app->param('startTimeLocal'),
 			'endTimeLocal' => $this->app->param('endTimeLocal'),
 			'productCode' => $this->app->param('productCode'),
+			'productCode' => 'PGLPPB',
 			'minAvailability' => $this->app->param('minAvailability') ?: 0,
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0
