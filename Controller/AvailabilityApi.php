@@ -19,22 +19,22 @@ class AvailabilityApi extends Controller {
 			return ['error' => 'You must provide products.'];
 		}
 
+		if (empty($this->app->param('startTimeLocal'))) {
+			return ['error' => 'You must provide a start time.'];
+		}
+
+		if (!empty($this->app->param('endTimeLocal'))) {
+			return ['error' => 'You must provide an end time.'];
+		}
+
 		$query = [
-			'productCode' => $this->app->param('productCode') ?: 0,
+			'startTimeLocal' => $this->app->param('startTimeLocal'),
+			'endTimeLocal' => $this->app->param('endTimeLocal'),
+			'productCode' => $this->app->param('productCode'),
 			'minAvailability' => $this->app->param('minAvailability') ?: 0,
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0
 		];
-
-		if (!empty($this->app->param('startTimeLocal'))) {
-			$query += ['startTimeLocal' => $this->app->param('startTimeLocal')];
-		}
-
-		if (!empty($this->app->param('endTimeLocal'))) {
-			$query += ['endTimeLocal' => $this->app->param('endTimeLocal')];
-		}
-
-		return $query;
 
 		$res = $this->rezdy->query('', $query);
 
