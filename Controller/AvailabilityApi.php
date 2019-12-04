@@ -40,7 +40,7 @@ class AvailabilityApi extends Controller {
 
 		return $this->rezdy->renderResponse($res, function($res) {
 			$q = \GuzzleHttp\Psr7\build_query($query);
-			return $q;
+			return ['query' => $q];
 			return ['sessions' => $res];
 		});
 	}
