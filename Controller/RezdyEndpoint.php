@@ -21,7 +21,7 @@ class RezdyEndpoint {
 		$res = $this->client->request('GET', $endpoint, [
 			'query' => $q
 		]);
-		return json_decode($res->getBody(), true);
+		return json_decode($res->getBody(), false);
 	}
 
 	public function renderResponse($res, $return_fn) {
