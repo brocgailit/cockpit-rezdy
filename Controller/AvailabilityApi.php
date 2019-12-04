@@ -40,7 +40,6 @@ class AvailabilityApi extends Controller {
 		$res = $this->rezdy->query('', $query);
 
 		return $this->rezdy->renderResponse($res, function($res) {
-			$q = Psr7\build_query($query);
 			return ['sessions' => $res];
 		});
 	}
