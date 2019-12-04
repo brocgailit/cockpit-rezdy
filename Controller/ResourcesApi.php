@@ -18,17 +18,10 @@ class ResourcesApi extends Controller {
     
     public function index($resource_id = '') {
 
-		$res = $this->rezdy->query($resource_id, [
+		return $this->rezdy->query($resource_id, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			if ( !empty($resource_id) ) {
-				return ['resource' => $res->resource];
-			}
-			return ['resources' => $res->resources];
-		});
 	}
 
 }

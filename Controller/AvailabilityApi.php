@@ -36,13 +36,7 @@ class AvailabilityApi extends Controller {
 			'offset' => $this->app->param('offset') ?: 0
 		];
 
-		$res = $this->rezdy->query('', $query);
-
-		return $res;
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			return ['sessions' => $res];
-		});
+		return $this->rezdy->query('', $query);
 	}
 }
 

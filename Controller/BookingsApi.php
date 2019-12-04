@@ -18,7 +18,7 @@ class BookingsApi extends Controller {
     
     public function index($order_number = '') {
 
-		$res = $this->rezdy->query($order_number, [
+		return $this->rezdy->query($order_number, [
 			'orderStatus' => $this->app->param('orderStatus'),
 			'search' => $this->app->param('search'),
 			'productCode' => $this->app->param('productCode'),
@@ -31,13 +31,6 @@ class BookingsApi extends Controller {
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			if ( !empty($order_number) ) {
-				return ['booking' => $res->booking];
-			}
-			return ['bookings' => $res->bookings];
-		});
 	}
 
 }

@@ -18,19 +18,12 @@ class CategoriesApi extends Controller {
     
     public function index($category_id = '') {
 
-		$res = $this->rezdy->query($category_id, [
+		return $this->rezdy->query($category_id, [
 			'search' => $this->app->param('search') ?: '',
 			'visible' => $this->app->param('visible') ?: null,
 			'limit' => $this->app->param('limit') ?: 100,
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			if ( !empty($category_id) ) {
-				return ['category' => $res->category];
-			}
-			return ['categories' => $res->categories];
-		});
 	}
 
 }
