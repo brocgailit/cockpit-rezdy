@@ -26,13 +26,13 @@ class AvailabilityApi extends Controller {
 			'offset' => $this->app->param('offset') ?: 0
 		];
 
-		if (!empty($this->app->param('startTimeLocal'))) {
+		/* if (!empty($this->app->param('startTimeLocal'))) {
 			$query += ['startTimeLocal' => $this->app->param('startTimeLocal')];
 		}
 
 		if (!empty($this->app->param('endTimeLocal'))) {
 			$query += ['endTimeLocal' => $this->app->param('endTimeLocal')];
-		}
+		} */
 
 		$res = $this->rezdy->query('', $query);
 
