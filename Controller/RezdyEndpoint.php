@@ -3,7 +3,6 @@
 namespace Rezdy\Controller;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\build_query;
 
 class RezdyEndpoint {
 	public $api_key;
@@ -18,11 +17,8 @@ class RezdyEndpoint {
 
 	public function query($endpoint = '', $options = []) {
 
-		$q = build_query(array_merge(['apiKey' => $this->api_key], $options), PHP_QUERY_RFC1738);
-		return $q;
-		$res = $this->client->request('GET', $endpoint, [
-			'query' => $q
-		]);
+		$q = \GuzzleHttp\Psr7\build_query(array_merge(['apiKey' => $this->api_key], $options));
+		$res = $this->client->request('GET', $endpoint . '?' . $q);
 		return json_decode($res->getBody());
 	}
 
