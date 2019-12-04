@@ -19,7 +19,7 @@ class RezdyEndpoint {
 		$res = $this->client->request('GET', $endpoint, [
 			'query' => array_merge(['apiKey' => $this->api_key], $options)
 		]);
-		$res->getQuery()->setAggregateFunction(array($request->getQuery(), 'aggregateUsingDuplicates'));
+		$res->getQuery()->setAggregateFunction(array($res->getQuery(), 'aggregateUsingDuplicates'));
 		return json_decode($res->getBody());
 	}
 
