@@ -16,8 +16,12 @@ class RezdyEndpoint {
 	}
 
 	public function query($endpoint = '', $options = []) {
-		$res = $this->client->request('GET', $endpoint, [
+		/* $res = $this->client->request('GET', $endpoint, [
 			'query' => array_merge(['apiKey' => $this->api_key], $options)
+		]); */
+		$q = "?apiKey=".$this->api_key."productCode=P4S1Q2&startTimeLocal=2019-12-03 09:30:00&endTimeLocal=2019-12-05 23:59:59";
+		$res = $this->client->request('GET', $endpoint, [
+			'query' => $q
 		]);
 		return json_decode($res->getBody());
 	}
