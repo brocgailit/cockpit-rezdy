@@ -44,8 +44,7 @@ class AvailabilityApi extends Controller {
 				'q' => Psr7\build_query([
 					'startTimeLocal' => $this->app->param('startTimeLocal'),
 					'endTimeLocal' => $this->app->param('endTimeLocal'),
-					'productCode' => $this->app->param('productCode'),
-					'productCode' => 'artsandfartsandcrafts',
+					'productCode' => array($this->app->param('productCode'), 'artsandfartsandcrafts'),
 					'minAvailability' => $this->app->param('minAvailability') ?: 0,
 					'limit' => $this->app->param('limit') ?: 100,
 					'offset' => $this->app->param('offset') ?: 0
