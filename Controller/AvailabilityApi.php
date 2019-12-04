@@ -23,7 +23,7 @@ class AvailabilityApi extends Controller {
 			return ['error' => 'You must provide a start time.'];
 		}
 
-		if (!empty($this->app->param('endTimeLocal'))) {
+		if (empty($this->app->param('endTimeLocal'))) {
 			return ['error' => 'You must provide an end time.'];
 		}
 
