@@ -7,11 +7,9 @@ use Rezdy\Controller\RezdyEndpoint;
 
 class BookingsApi extends Controller {
 	private $rezdy;
-	private $app;
 
 	public function __construct($options) {
 		parent::__construct($options);
-		$this->app = $options;
         $this->rezdy = new RezdyEndpoint(
             'https://api.rezdy.com/v1/bookings/',
             $this->app['config']['rezdy']['api_key']
@@ -36,7 +34,7 @@ class BookingsApi extends Controller {
 	}
 
 	public function quote() {
-		return json_encode($this->app);
+		return json_encode($this->app['config']['rezdy']);
 	}
 
 }
