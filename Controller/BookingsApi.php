@@ -36,7 +36,7 @@ class BookingsApi extends Controller {
 	}
 
 	public function quote() {
-		return json_encode($this->options);
+		return $this->options;
 	}
 
 }
