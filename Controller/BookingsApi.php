@@ -11,7 +11,7 @@ class BookingsApi extends Controller {
 
 	public function __construct($options) {
 		parent::__construct($options);
-		$this->options - $options;
+		$this->options = $options;
         $this->rezdy = new RezdyEndpoint(
             'https://api.rezdy.com/v1/bookings/',
             $this->app['config']['rezdy']['api_key']
