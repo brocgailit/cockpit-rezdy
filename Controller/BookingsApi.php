@@ -36,7 +36,7 @@ class BookingsApi extends Controller {
 	}
 
 	public function quote() {
-		return $this->options;
+		return $this->req_is('post');
 	}
 
 }
