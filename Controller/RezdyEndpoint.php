@@ -24,10 +24,10 @@ class RezdyEndpoint {
 		return json_decode($res->getBody(), true);
 	}
 
-	public function post($data) {
+	public function post($endpoint = '', $data) {
 		$res = $this->client->request('POST', $endpoint, [
 			'query' => ['apiKey' => $this->api_key],
-			'json' => ['foo' => 'bar']
+			'json' => $data
 		]);
 		return json_decode($res->getBody());
 	}
