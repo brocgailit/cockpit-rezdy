@@ -40,6 +40,13 @@ class BookingsApi extends Controller {
 		});
 	}
 
+	public function quote() {
+		$res = $this->app;
+		return $this->rezdy->renderResponse($res, function($res) {
+			return ['test' => $res];
+		});
+	}
+
 }
 
 ?>

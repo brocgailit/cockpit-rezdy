@@ -24,6 +24,14 @@ class RezdyEndpoint {
 		return json_decode($res->getBody());
 	}
 
+	public function post($data) {
+		$res = $this->client->request('POST', $endpoint, [
+			'query' => ['apiKey' => $this->api_key],
+			'json' => ['foo' => 'bar']
+		]);
+		return json_decode($res->getBody());
+	}
+
 	public function renderResponse($res, $return_fn) {
 
 		$status = $res->requestStatus;
