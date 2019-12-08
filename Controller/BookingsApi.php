@@ -36,7 +36,7 @@ class BookingsApi extends Controller {
 	}
 
 	public function quote() {
-		return $this->req_is('post');
+		return json_decode(file_get_contents('php://input'), true);
 	}
 
 }
