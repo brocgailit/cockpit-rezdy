@@ -15,33 +15,22 @@ class ProductsApi extends Controller {
 
     public function index() {
 
-		$res = $this->rezdy->query('', [
+		return $this->rezdy->query('', [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			if ( !empty($product_code) ) {
-				return ['product' => $res->product];
-			}
-			return ['products' => $res->products];
-		});
 	}
 
 	public function product($product_code) {
 		if (empty($product_code)) {
 			return ['error' => 'You must provide a product code.'];
 		}
-		$res = $this->rezdy->query($product_code, [
+		return $this->rezdy->query($product_code, [
 			'limit' => $this->app->param('limit') ?: 100,
 			'search' => $this->app->param('search') ?: '',
 			'offset' => $this->app->param('offset') ?: 0,
 		]);
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			return ['product' => $res->product];
-		});
 	}
 	
 	public function pickups($product_code) {
@@ -49,11 +38,7 @@ class ProductsApi extends Controller {
 			return ['error' => 'You must provide a product code.'];
 		}
 
-		$res = $this->rezdy->query($product_code . '/pickups');
-
-		return $this->rezdy->renderResponse($res, function($res) {
-			return ['pickupLocations' => $res->pickupLocations];
-		});
+		return $this->rezdy->query($product_code . '/pickups');
 	}
 
 }
