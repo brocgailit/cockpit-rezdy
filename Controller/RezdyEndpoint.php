@@ -29,7 +29,7 @@ class RezdyEndpoint {
 			'query' => ['apiKey' => $this->api_key],
 			'json' => $data
 		]);
-		return json_decode($res->getBody());
+		return json_decode($res->getBody(), true);
 	}
 
 	public function renderResponse($res, $return_fn) {
