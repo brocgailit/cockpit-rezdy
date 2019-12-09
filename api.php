@@ -6,4 +6,5 @@ $app->on('cockpit.rest.init', function ($routes) {
   $routes['categories'] = 'Rezdy\\Controller\\CategoriesApi';
   $routes['bookings'] = 'Rezdy\\Controller\\BookingsApi';
   $routes['availability'] = 'Rezdy\\Controller\\AvailabilityApi';
+  $routes['vouchers'] = 'Rezdy\\Controller\\VouchersApi';
 });
