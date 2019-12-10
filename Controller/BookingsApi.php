@@ -19,11 +19,14 @@ class BookingsApi extends Controller {
     }
     
     public function index($order_number = '') {
+		return 'Bookings API'
+	}
+
+	public function booking($order_number) {
 		if($this->req_is('post')) {
 			$data = json_decode(file_get_contents('php://input'), true);
 			return $this->rezdy->post('', $data);
 		}
-
 
 		if($this->req_is('delete')) {
 			return $order_number;
