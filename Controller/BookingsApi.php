@@ -19,7 +19,7 @@ class BookingsApi extends Controller {
     }
     
     public function index($order_number = '') {
-		return 'Bookings API'
+		return 'Bookings API';
 	}
 
 	public function booking($order_number) {
