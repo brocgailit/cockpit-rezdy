@@ -24,6 +24,11 @@ class BookingsApi extends Controller {
 			return $this->rezdy->post('', $data);
 		}
 
+
+		if($this->req_is('delete')) {
+			return $order_number;
+		}
+
 		return $this->rezdy->query($order_number, [
 			'orderStatus' => $this->app->param('orderStatus'),
 			'search' => $this->app->param('search'),
