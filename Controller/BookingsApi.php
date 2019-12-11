@@ -29,7 +29,7 @@ class BookingsApi extends Controller {
 		}
 
 		if($this->req_is('delete')) {
-			return $order_number;
+			return $this->rezdy->delete($order_number);
 		}
 
 		return $this->rezdy->query($order_number, [
