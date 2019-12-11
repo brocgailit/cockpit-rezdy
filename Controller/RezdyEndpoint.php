@@ -32,6 +32,18 @@ class RezdyEndpoint {
 		return json_decode($res->getBody(), true);
 	}
 
+	public function delete($endpoint) {
+		if(!isset($endpoint)) {
+			return 'Please provide a valid order number';
+		}
+
+		$res = $this->client->request('DELETE', $endpoint, [
+			'query' => ['apiKey' => $this->api_key]
+		]);
+
+		return json_decode($res->getBody(), true);
+	}
+
 	public function renderResponse($res, $return_fn) {
 
 		$status = $res->requestStatus;
