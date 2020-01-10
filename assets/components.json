@@ -1598,7 +1598,7 @@
         ],
         "group": "Products"
     },
-    "mauticForm": {
+    "mauticFormTest": {
         "label": "Mautic Form",
         "dialog": "normal",
         "children": false,
