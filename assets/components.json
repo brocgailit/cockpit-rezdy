@@ -3,6 +3,7 @@
         "label": "Form",
         "dialog": "large",
         "children": false,
+        "icon": "/assets/app/media/icons/text.svg",
         "fields": [
             {
                 "name": "name",
@@ -1598,7 +1599,7 @@
         ],
         "group": "Products"
     },
-    "mauticFormTest": {
+    "mauticForm": {
         "label": "Mautic Form",
         "dialog": "normal",
         "children": false,
