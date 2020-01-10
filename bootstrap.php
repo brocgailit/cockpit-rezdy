@@ -12,7 +12,12 @@ if (!isset($app['modules'][strtolower($name)])) {
     return;
 }
 
-// ADMIN
+// API
 if (COCKPIT_API_REQUEST) {
   include_once(__DIR__ . '/api.php');
+}
+
+// ADMIN
+if (COCKPIT_ADMIN && !COCKPIT_API_REQUEST) {
+  include_once(__DIR__ . '/admin.php');
 }

@@ -1,0 +1,2888 @@
+{
+    "form": {
+        "label": "Form",
+        "dialog": "large",
+        "children": false,
+        "fields": [
+            {
+                "name": "name",
+                "label": "Name",
+                "type": "text",
+                "default": "",
+                "info": "Add a name to identify this form.",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "form",
+                "label": "Form",
+                "type": "modulelink",
+                "default": "",
+                "info": "Which form(s) would you like to send the submitted information to?",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "module": "forms",
+                    "multiple": false
+                },
+                "width": "1-2",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "title",
+                "label": "Form Title",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            },
+            {
+                "name": "instructions",
+                "label": "Instructions",
+                "type": "wysiwyg",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "editor": {
+                        "menubar": false,
+                        "toolbar1": "undo redo | bold italic | link unlink"
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "fields",
+                "label": "Fields",
+                "type": "repeater",
+                "default": "",
+                "info": "Add form inputs such as check boxes and multi-line text input.",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "fields": [
+                        {
+                            "type": "set",
+                            "name": "text",
+                            "label": "Text",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "placeholder",
+                                        "type": "text",
+                                        "label": "Placeholder"
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "text",
+                                        "label": "Default Value"
+                                    },
+                                    {
+                                        "name": "type",
+                                        "type": "select",
+                                        "label": "Type",
+                                        "options": {
+                                            "options": {
+                                                "text": "Plain Text",
+                                                "url": "Website Address",
+                                                "email": "Email Address"
+                                            },
+                                            "default": "text",
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "maxlength",
+                                        "type": "text",
+                                        "label": "Max. Length",
+                                        "options": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    {
+                                        "name": "pattern",
+                                        "type": "text",
+                                        "label": "Validation Pattern (RegEx)"
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "icon",
+                                        "type": "select",
+                                        "label": "Icon",
+                                        "options": {
+                                            "options": {
+                                                "envelope": "Envelope",
+                                                "user": "Person",
+                                                "users": "People",
+                                                "briefcase": "Business",
+                                                "calendar": "Calendar",
+                                                "clock": "Clock",
+                                                "phone": "Phone",
+                                                "money-bill-wave": "Money"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "textarea",
+                            "label": "Multi-line Text",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "placeholder",
+                                        "type": "text",
+                                        "label": "Placeholder"
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "text",
+                                        "label": "Default Value"
+                                    },
+                                    {
+                                        "name": "rows",
+                                        "type": "text",
+                                        "label": "Number of Rows",
+                                        "options": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    {
+                                        "name": "maxlength",
+                                        "type": "text",
+                                        "label": "Max. Length",
+                                        "options": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "icon",
+                                        "type": "select",
+                                        "label": "Icon",
+                                        "options": {
+                                            "options": {
+                                                "envelope": "Envelope",
+                                                "user": "Person",
+                                                "users": "People",
+                                                "briefcase": "Business",
+                                                "calendar": "Calendar",
+                                                "clock": "Clock",
+                                                "phone": "Phone",
+                                                "money-bill-wave": "Money"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "select",
+                            "label": "Select One \/ Many",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "placeholder",
+                                        "type": "text",
+                                        "label": "Placeholder"
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "text",
+                                        "label": "Default Value"
+                                    },
+                                    {
+                                        "name": "multiple",
+                                        "type": "boolean",
+                                        "label": "Multiple Selections"
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "icon",
+                                        "type": "select",
+                                        "label": "Icon",
+                                        "options": {
+                                            "options": {
+                                                "envelope": "Envelope",
+                                                "user": "Person",
+                                                "users": "People",
+                                                "briefcase": "Business",
+                                                "calendar": "Calendar",
+                                                "clock": "Clock",
+                                                "phone": "Phone",
+                                                "money-bill-wave": "Money"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "options",
+                                        "type": "repeater",
+                                        "label": "Options",
+                                        "options": {
+                                            "field": {
+                                                "type": "set",
+                                                "name": "option",
+                                                "label": "Option",
+                                                "options": {
+                                                    "fields": [
+                                                        {
+                                                            "name": "label",
+                                                            "type": "text",
+                                                            "label": "Label"
+                                                        },
+                                                        {
+                                                            "name": "value",
+                                                            "type": "text",
+                                                            "label": "Value"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "checkbox",
+                            "label": "Checkbox",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "placeholder",
+                                        "type": "text",
+                                        "label": "Placeholder"
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "boolean",
+                                        "label": "Checked"
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "true",
+                                        "type": "text",
+                                        "label": "True Value"
+                                    },
+                                    {
+                                        "name": "false",
+                                        "type": "text",
+                                        "label": "False Value"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "number",
+                            "label": "Number",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "text",
+                                        "label": "Default",
+                                        "options": {
+                                            "type": "number",
+                                            "step": "0.01"
+                                        }
+                                    },
+                                    {
+                                        "name": "step",
+                                        "type": "text",
+                                        "label": "step",
+                                        "options": {
+                                            "type": "number",
+                                            "step": "0.01"
+                                        }
+                                    },
+                                    {
+                                        "name": "min",
+                                        "type": "text",
+                                        "label": "Minimum",
+                                        "options": {
+                                            "type": "number",
+                                            "step": "0.01"
+                                        }
+                                    },
+                                    {
+                                        "name": "max",
+                                        "type": "text",
+                                        "label": "Maximum",
+                                        "options": {
+                                            "type": "number",
+                                            "step": "0.01"
+                                        }
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "100"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "date",
+                            "label": "Date",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "placeholder",
+                                        "type": "text",
+                                        "label": "Placeholder"
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "date",
+                                        "label": "Default",
+                                        "options": {
+                                            "format": "YYYY-MM-DD",
+                                            "weekstart": 0
+                                        }
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "icon",
+                                        "type": "select",
+                                        "label": "Icon",
+                                        "options": {
+                                            "options": {
+                                                "envelope": "Envelope",
+                                                "user": "Person",
+                                                "users": "People",
+                                                "briefcase": "Business",
+                                                "calendar": "Calendar",
+                                                "clock": "Clock",
+                                                "phone": "Phone",
+                                                "money-bill-wave": "Money"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "set",
+                            "name": "time",
+                            "label": "Time",
+                            "options": {
+                                "fields": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Identifier (Example: firstName or FIRST_NAME or FirstName)",
+                                        "options": {
+                                            "required": true,
+                                            "pattern": "^[a-zA-Z0-9_]*$"
+                                        }
+                                    },
+                                    {
+                                        "name": "label",
+                                        "type": "text",
+                                        "label": "Label",
+                                        "options": {
+                                            "required": true
+                                        }
+                                    },
+                                    {
+                                        "name": "help",
+                                        "type": "text",
+                                        "label": "Help Text"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "type": "time",
+                                        "label": "Default",
+                                        "options": {
+                                            "format": "12h"
+                                        }
+                                    },
+                                    {
+                                        "name": "required",
+                                        "type": "boolean",
+                                        "label": "Required"
+                                    },
+                                    {
+                                        "name": "width",
+                                        "type": "select",
+                                        "label": "Width",
+                                        "options": {
+                                            "options": {
+                                                "50": "Half",
+                                                "100": "Full"
+                                            },
+                                            "default": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "icon",
+                                        "type": "select",
+                                        "label": "Icon",
+                                        "options": {
+                                            "options": {
+                                                "envelope": "Envelope",
+                                                "user": "Person",
+                                                "users": "People",
+                                                "briefcase": "Business",
+                                                "calendar": "Calendar",
+                                                "clock": "Clock",
+                                                "phone": "Phone",
+                                                "money-bill-wave": "Money"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "submitLabel",
+                "label": "Submit Label",
+                "type": "text",
+                "default": "",
+                "info": "Example: 'Get my quote'",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "confirmation",
+                "label": "Confirmation Message",
+                "type": "wysiwyg",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "download",
+                "label": "Gated Content (Download)",
+                "type": "set",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "fields": [
+                        {
+                            "name": "asset",
+                            "type": "asset",
+                            "label": "Content"
+                        },
+                        {
+                            "name": "label",
+                            "type": "text",
+                            "label": "Download Label",
+                            "options": {
+                                "default": "Download"
+                            }
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "url",
+                "label": "Third-party Destination URL",
+                "type": "text",
+                "default": "",
+                "info": "Send data to services like Zapier",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Forms"
+    },
+    "hero": {
+        "label": "Hero",
+        "dialog": "large",
+        "children": true,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "This should contain the pages primary keyword phrase.",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "subtitle",
+                "label": "Subtitle",
+                "type": "text",
+                "default": "",
+                "info": "You should use your page's secondary or related keywords prominently here.",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "size",
+                "label": "Size",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": {
+                        "default": "Small",
+                        "medium": "Medium",
+                        "large": "Large",
+                        "fullheight-with-navbar": "Full Height"
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "color",
+                "label": "Background Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": {
+                        "primary": "Primary",
+                        "secondary": "Secondary",
+                        "info": "Info (Light Yellow)",
+                        "success": "Success (Green)",
+                        "warning": "Warning (Orange)",
+                        "danger": "Danger (Red)",
+                        "light": "Light Gray",
+                        "dark": "Dark Gray",
+                        "black": "Black"
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "gradient",
+                "label": "Background Gradient",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "cta",
+                "label": "Calls to Action",
+                "type": "repeater",
+                "default": "",
+                "info": "Add buttons\/links which direct users to your site's primary goal(s)",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "action",
+                        "label": "Action",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "label",
+                                    "type": "text",
+                                    "label": "Label",
+                                    "options": {
+                                        "placeholder": "Example: 'Contact Us'"
+                                    }
+                                },
+                                {
+                                    "name": "path",
+                                    "type": "text",
+                                    "label": "Path",
+                                    "options": {
+                                        "placeholder": "Example: 'about' or 'https:\/\/www.example.com'"
+                                    }
+                                },
+                                {
+                                    "name": "title",
+                                    "type": "text",
+                                    "label": "Description",
+                                    "options": {
+                                        "placeholder": "Example: 'Get in touch with our sales department'"
+                                    }
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "select",
+                                    "label": "Color",
+                                    "options": {
+                                        "options": {
+                                            "primary": "Primary",
+                                            "secondary": "Secondary",
+                                            "info": "Info (Blue)",
+                                            "success": "Success (Green)",
+                                            "warning": "Warning (Orange\/Yellow)",
+                                            "danger": "Danger (Red)",
+                                            "light": "Light Gray",
+                                            "dark": "Dark Gray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "outlined",
+                                    "label": "Outlined",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "background",
+                "label": "Background Image",
+                "type": "asset",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "video",
+                "label": "Video",
+                "type": "set",
+                "default": "",
+                "info": "Video files must be under 10MB",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "fields": [
+                        {
+                            "type": "asset",
+                            "label": "MPEG",
+                            "name": "mpeg"
+                        },
+                        {
+                            "type": "asset",
+                            "label": "WebM",
+                            "name": "webm"
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Layout"
+    },
+    "trustIcons": {
+        "label": "Logo List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "heading",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "Example: 'Featured In'",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": "Featured In"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "icons",
+                "label": "Icons\/Logos",
+                "type": "repeater",
+                "default": "",
+                "info": "Include only highly recognizable icons of trust.",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "icon",
+                        "label": "icon",
+                        "options": {
+                            "fields": [
+                                {
+                                    "type": "text",
+                                    "name": "name",
+                                    "label": "Name"
+                                },
+                                {
+                                    "type": "asset",
+                                    "name": "image",
+                                    "label": "Image"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "path",
+                                    "label": "Path",
+                                    "options": {
+                                        "placeholder": "Example: 'partners' or 'https:\/\/www.heavycraft.io'"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "EAT"
+    },
+    "organizationContact": {
+        "label": "Business Contact Information",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "organization",
+                "label": "Organization",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "organizations",
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "showMap",
+                "label": "Show Map",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            }
+        ],
+        "group": "EAT"
+    },
+    "events": {
+        "label": "Events List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "limit",
+                "label": "Limit",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "default": "10"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "selection",
+                "label": "Dates",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": "upcoming",
+                    "options": [
+                        {
+                            "label": "Past Events",
+                            "value": "past"
+                        },
+                        {
+                            "label": "Upcoming Events",
+                            "value": "upcoming"
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Info"
+    },
+    "script": {
+        "label": "Inline Script",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "src",
+                "label": "Script Source",
+                "type": "text",
+                "default": "",
+                "info": "Example: https:\/\/www.domain.com\/script.js",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ]
+    },
+    "menu": {
+        "label": "Menu",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "menu",
+                "label": "",
+                "type": "collectionselect",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "menus",
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showTop",
+                "label": "Show Top-level Items",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "direction",
+                "label": "Direction",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": {
+                        "horizontal": "Horizontal",
+                        "vertical": "Vertical"
+                    },
+                    "default": "vertical"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Layout"
+    },
+    "testimonials": {
+        "label": "Testimonials List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "testmonials",
+                "label": "Testimonials",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "testimonials",
+                    "multiple": true,
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "rate",
+                "label": "Rotation Rate",
+                "type": "text",
+                "default": "",
+                "info": "Enter the time between testimonials in milliseconds (Default: 5000ms)",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "default": 5000
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "EAT"
+    },
+    "parallaxSection": {
+        "label": "Parallax Section",
+        "dialog": "large",
+        "children": false,
+        "fields": [
+            {
+                "name": "size",
+                "label": "Size",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "value": "small",
+                            "label": "Small"
+                        },
+                        {
+                            "value": "medium",
+                            "label": "Medium"
+                        },
+                        {
+                            "value": "large",
+                            "label": "Large"
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "background",
+                "label": "Background Image",
+                "type": "asset",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "position",
+                "label": "Position",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": "full",
+                    "options": [
+                        {
+                            "value": "left",
+                            "label": "Left Align"
+                        },
+                        {
+                            "value": "right",
+                            "label": "Right Align"
+                        },
+                        {
+                            "value": "full",
+                            "label": "Full Width"
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Layout"
+    },
+    "howto": {
+        "label": "How-to",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "howto",
+                "label": "How-to",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "howtos",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Info"
+    },
+    "message": {
+        "label": "Message",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "message",
+                "label": "Message",
+                "type": "wysiwyg",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "type",
+                "label": "Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": {
+                        "info": "Info",
+                        "warning": "Warning",
+                        "success": "Success",
+                        "danger": "Danger",
+                        "dark": "Dark (No Icon)",
+                        "primary": "Primary (No Icon)",
+                        "link": "Link (No Icon)"
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "hasIcon",
+                "label": "Show Icon",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "closeable",
+                "label": "Closeable",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Layout"
+    },
+    "features": {
+        "label": "Feature List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "features",
+                "label": "",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "icon",
+                        "label": "icon",
+                        "options": {
+                            "fields": [
+                                {
+                                    "type": "text",
+                                    "name": "name",
+                                    "label": "Name"
+                                },
+                                {
+                                    "type": "asset",
+                                    "name": "icon",
+                                    "label": "Icon"
+                                },
+                                {
+                                    "type": "text",
+                                    "name": "description",
+                                    "label": "Description"
+                                },
+                                {
+                                    "type": "set",
+                                    "name": "action",
+                                    "label": "Action",
+                                    "options": {
+                                        "fields": [
+                                            {
+                                                "type": "text",
+                                                "name": "label",
+                                                "label": "Label"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "name": "path",
+                                                "label": "Path"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Layout"
+    },
+    "services": {
+        "label": "Service List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "services",
+                "label": "",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "services",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Info"
+    },
+    "products": {
+        "label": "Product List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "products",
+                "label": "Products",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "products",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "compact",
+                "label": "Compact Layout",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Products"
+    },
+    "productComparison": {
+        "label": "Product Comparison Chart",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "products",
+                "label": "Products",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "products",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Products"
+    },
+    "mauticForm": {
+        "label": "Mautic Form",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "mautic_id",
+                "label": "Mautic Form ID",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "url": "https:\/\/heavycraft.netlify.com\/.netlify\/functions\/mautic-form",
+                    "param": "search",
+                    "root": "forms",
+                    "value": "id",
+                    "title": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "inline",
+                "label": "Display Inline",
+                "type": "boolean",
+                "default": "",
+                "info": "Form fields will be side-by-side",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "submitLabel",
+                "label": "Submit Label",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": "Submit"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Forms"
+    },
+    "instagram": {
+        "label": "Instagram Feed",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "limit",
+                "label": "Limit",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Social"
+    },
+    "bubbles": {
+        "label": "Testimonial Bubbles",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "testimonials",
+                "label": "Testimonials",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "reviews",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "EAT"
+    },
+    "productCategories": {
+        "label": "Product Category List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "categories",
+                "label": "Categories",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "productCategories",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Products"
+    },
+    "iconList": {
+        "label": "Icon List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "icons",
+                "label": "Icons",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "icon",
+                        "label": "Icon",
+                        "options": {
+                            "limit": 3,
+                            "fields": [
+                                {
+                                    "name": "name",
+                                    "type": "text",
+                                    "label": "Name"
+                                },
+                                {
+                                    "name": "icon",
+                                    "type": "select",
+                                    "label": "Icon",
+                                    "options": {
+                                        "options": [
+                                            {
+                                                "value": "clock",
+                                                "label": "Clock"
+                                            },
+                                            {
+                                                "value": "route",
+                                                "label": "Route"
+                                            },
+                                            {
+                                                "value": "person-sign",
+                                                "label": "Guide"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Info"
+    },
+    "person": {
+        "label": "Staff Bio",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "person",
+                "label": "Person",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "people",
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "isFeatured",
+                "label": "Featured",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showFavoritePlace",
+                "label": "Show Favorite Place",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showFavoriteJobQualities",
+                "label": "Show Favorite Job Qualities",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showPersonAnalogy",
+                "label": "Show Sandwich Analogy",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showChildhoodNickname",
+                "label": "Show Childhood Nickname",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "showFullBio",
+                "label": "Show Full Bio",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "EAT"
+    },
+    "badge": {
+        "label": "Section Badge",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "message",
+                "label": "Message",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "maxlength": 25
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "position",
+                "label": "Position",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "value": "is-left",
+                            "label": "Top Left"
+                        },
+                        {
+                            "value": "is-right",
+                            "label": "Top Right"
+                        }
+                    ]
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ]
+    },
+    "itinerary": {
+        "label": "Itinerary",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            },
+            {
+                "name": "itinerary",
+                "label": "Itinerary",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "item",
+                        "label": "Itinerary Item",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "duration",
+                                    "label": "Duration (Minutes)",
+                                    "type": "text",
+                                    "options": {
+                                        "type": "number"
+                                    }
+                                },
+                                {
+                                    "name": "title",
+                                    "label": "Title",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "description",
+                                    "label": "Description",
+                                    "type": "textarea",
+                                    "options": {
+                                        "maxlength": 400
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "hideDurations",
+                "label": "Hide Durations",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Products"
+    },
+    "attractions": {
+        "label": "Attraction List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "Ex: \"Featured Attractions\"",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "attractions",
+                "label": "Attractions",
+                "type": "repeater",
+                "default": "",
+                "info": "Highlight a small handful of a product's main attractions.",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "limit": 10,
+                    "display": "display",
+                    "field": {
+                        "type": "set",
+                        "name": "attraction",
+                        "label": "Attraction",
+                        "display": "attraction.display",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "attraction",
+                                    "label": "Attraction",
+                                    "type": "collectionlink",
+                                    "options": {
+                                        "link": "attractions",
+                                        "display": "name"
+                                    }
+                                },
+                                {
+                                    "name": "stop",
+                                    "label": "Photo Stop",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Products"
+    },
+    "map": {
+        "label": "Map",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "Ex: \"Route Map\"",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "routes",
+                "label": "Routes",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "route",
+                        "label": "Route",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "name",
+                                    "type": "text",
+                                    "label": "Name"
+                                },
+                                {
+                                    "name": "color",
+                                    "type": "select",
+                                    "label": "Color",
+                                    "options": {
+                                        "options": [
+                                            {
+                                                "label": "Primary",
+                                                "value": "primary"
+                                            },
+                                            {
+                                                "label": "Secondary",
+                                                "value": "secondary"
+                                            },
+                                            {
+                                                "label": "Info",
+                                                "value": "info"
+                                            },
+                                            {
+                                                "label": "Warning",
+                                                "value": "warning"
+                                            },
+                                            {
+                                                "label": "Danger",
+                                                "value": "danger"
+                                            },
+                                            {
+                                                "label": "Success",
+                                                "value": "success"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "latLngs",
+                                    "type": "map-polyline",
+                                    "label": "Route"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "attractions",
+                "label": "Attractions",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "attractions",
+                    "multiple": true,
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "zoom",
+                "label": "Zoom Level",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": 14,
+                    "options": {
+                        "type": "number",
+                        "min": "1",
+                        "max": "20"
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "center",
+                "label": "Center",
+                "type": "location",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "routeIcon",
+                "label": "Route Icon",
+                "type": "asset",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ]
+    },
+    "faq": {
+        "label": "FAQ",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "title",
+                "label": "Title",
+                "type": "text",
+                "default": "",
+                "info": "Use for SEO",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "questions",
+                "label": "Questions",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "display": "display",
+                    "field": {
+                        "type": "set",
+                        "name": "question",
+                        "label": "Question",
+                        "display": "question",
+                        "options": {
+                            "fields": [
+                                {
+                                    "type": "text",
+                                    "name": "question",
+                                    "label": "Question"
+                                },
+                                {
+                                    "type": "wysiwyg",
+                                    "name": "answer",
+                                    "label": "Answer"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Info"
+    },
+    "productSchedule": {
+        "label": "Product Schedule",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "products",
+                "label": "",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "products",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "weeks",
+                "label": "Weeks",
+                "type": "text",
+                "default": "",
+                "info": "How far out should the schedule go?",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "min": 1,
+                    "max": 52,
+                    "default": 6
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "limit",
+                "label": "Limit Results",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "min": 0,
+                    "default": 100
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Products"
+    },
+    "rezdyProductVideo": {
+        "label": "Rezdy Product Video",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "product",
+                "label": "Product",
+                "type": "fetch-autocomplete",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "param": "search",
+                    "root": "products",
+                    "value": "productCode",
+                    "title": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Rezdy"
+    },
+    "rezdyProductGallery": {
+        "label": "Rezdy Product Images",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "product",
+                "label": "Product",
+                "type": "fetch-autocomplete",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "param": "search",
+                    "root": "products",
+                    "value": "productCode",
+                    "title": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Rezdy"
+    },
+    "people": {
+        "label": "Staff List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "people",
+                "label": "People",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "people",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ]
+    },
+    "wufoo": {
+        "label": "Wufoo Form",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "form",
+                "label": "",
+                "type": "wufoo-select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "key": "e862c42a7546ab106a08d6679f568b"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "horizontal",
+                "label": "Horizontal",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Forms"
+    },
+    "rezdyGiftCards": {
+        "label": "Rezdy Gift Cards",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "cards",
+                "label": "Gift Cards",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "card",
+                        "label": "Gift Card",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "productCode",
+                                    "type": "fetch-autocomplete",
+                                    "label": "Rezdy Gift Card",
+                                    "options": {
+                                        "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                                        "param": "search",
+                                        "root": "products",
+                                        "value": "productCode",
+                                        "title": "name",
+                                        "filter": {
+                                            "key": "productType",
+                                            "value": "GIFT_CARD"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "title",
+                                    "label": "Title",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "description",
+                                    "label": "Brief Description",
+                                    "type": "wysiwyg",
+                                    "options": {
+                                        "editor": {
+                                            "format": "basic"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Rezdy"
+    },
+    "reviewsIoWidget": {
+        "label": "Reviews.io Widget",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "store",
+                "label": "Reviews.io Store ID",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "widgetName",
+                "label": "Widget Type",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Carousel",
+                            "value": "carousel"
+                        },
+                        {
+                            "label": "Inline Carousel",
+                            "value": "carousel-inline"
+                        }
+                    ],
+                    "default": "carousel"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "primaryClr",
+                "label": "Primary Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        },
+                        {
+                            "label": "Dark",
+                            "value": "dark"
+                        },
+                        {
+                            "label": "Primary",
+                            "value": "primary"
+                        }
+                    ],
+                    "default": "primary"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "neutralClr",
+                "label": "Neutral Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        },
+                        {
+                            "label": "Dark",
+                            "value": "dark"
+                        },
+                        {
+                            "label": "Primary",
+                            "value": "primary"
+                        }
+                    ],
+                    "default": "light"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "reviewTextClr",
+                "label": "Review Text Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        },
+                        {
+                            "label": "Dark",
+                            "value": "dark"
+                        },
+                        {
+                            "label": "Primary",
+                            "value": "primary"
+                        }
+                    ],
+                    "default": "dark"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "ratingTextClr",
+                "label": "Rating Text Color",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Light",
+                            "value": "light"
+                        },
+                        {
+                            "label": "Dark",
+                            "value": "dark"
+                        },
+                        {
+                            "label": "Primary",
+                            "value": "primary"
+                        }
+                    ],
+                    "default": "dark"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "layout",
+                "label": "Layout",
+                "type": "select",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "options": [
+                        {
+                            "label": "Full Width",
+                            "value": "fullWidth"
+                        }
+                    ],
+                    "default": "fullwidth"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "numReviews",
+                "label": "Number of Reviews",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "min": 1,
+                    "step": 1
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "hideDates",
+                "label": "Hide Dates",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            },
+            {
+                "name": "contentMode",
+                "label": "Content Mode",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "default": "company;third-party"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            },
+            {
+                "name": "css",
+                "label": "CSS",
+                "type": "code",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": false
+            }
+        ],
+        "group": "EAT"
+    },
+    "reviews": {
+        "label": "Reviews List",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "reviews",
+                "label": "Reviews",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "reviews",
+                    "multiple": true,
+                    "display": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "rate",
+                "label": "Rotation Rate",
+                "type": "text",
+                "default": "",
+                "info": "Enter the time between testimonials in milliseconds (Default: 5000ms)",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "default": 5000
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "EAT"
+    },
+    "tripAdvisorBadge": {
+        "label": "TripAdvisor Badge",
+        "dialog": "normal",
+        "children": false,
+        "fields": [
+            {
+                "name": "ringText",
+                "label": "Outer Text",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "innerTextTop",
+                "label": "Inner Text (top)",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "innerTextBottom",
+                "label": "Inner Text (bottom)",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "layouts",
+                "label": "Layouts",
+                "type": "layout",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "EAT"
+    }
+}
