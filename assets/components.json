@@ -1,6 +1,6 @@
 {
-    "form": {
-        "label": "Form",
+    "formTest": {
+        "label": "Form Test",
         "dialog": "large",
         "children": false,
         "icon": "/assets/app/media/icons/text.svg",
