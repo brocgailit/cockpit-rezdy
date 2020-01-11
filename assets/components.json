@@ -2034,7 +2034,21 @@
                 "group": "",
                 "localize": false,
                 "options": [],
-                "width": "1-1",
+                "width": "1-2",
+                "lst": true,
+                "acl": [],
+                "required": false
+            },
+            {
+                "name": "hideAttractions",
+                "label": "Hide Attractions",
+                "type": "boolean",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": [],
+                "width": "1-2",
                 "lst": true,
                 "acl": [],
                 "required": false
