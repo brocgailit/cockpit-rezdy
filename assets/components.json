@@ -1945,59 +1945,85 @@
                 "label": "Title",
                 "type": "text",
                 "default": "",
-                "info": "",
+                "info": "Example: \"What to Expect\"",
                 "group": "",
                 "localize": false,
                 "options": [],
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "start",
+                "label": "Start",
+                "type": "set",
+                "default": "",
+                "info": "Provide a description or instructions for the beginning of the trip.",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "fields": [
+                        {
+                            "name": "duration",
+                            "label": "Duration (Minutes)",
+                            "type": "text",
+                            "options": {
+                                "type": "number",
+                                "required": true
+                            }
+                        },
+                        {
+                            "name": "title",
+                            "label": "Title",
+                            "type": "text"
+                        },
+                        {
+                            "name": "description",
+                            "label": "Description",
+                            "type": "wysiwyg"
+                        }
+                    ]
+                },
                 "width": "1-1",
                 "lst": true,
                 "acl": [],
                 "required": false
             },
             {
-                "name": "itinerary",
-                "label": "Itinerary",
-                "type": "repeater",
+                "name": "end",
+                "label": "End",
+                "type": "set",
                 "default": "",
-                "info": "",
+                "info": "Provide a description or instructions for the end of the trip.",
                 "group": "",
                 "localize": false,
                 "options": {
-                    "field": {
-                        "type": "set",
-                        "name": "item",
-                        "label": "Itinerary Item",
-                        "options": {
-                            "fields": [
-                                {
-                                    "name": "duration",
-                                    "label": "Duration (Minutes)",
-                                    "type": "text",
-                                    "options": {
-                                        "type": "number"
-                                    }
-                                },
-                                {
-                                    "name": "title",
-                                    "label": "Title",
-                                    "type": "text"
-                                },
-                                {
-                                    "name": "description",
-                                    "label": "Description",
-                                    "type": "textarea",
-                                    "options": {
-                                        "maxlength": 400
-                                    }
-                                }
-                            ]
+                    "fields": [
+                        {
+                            "name": "duration",
+                            "label": "Duration (Minutes)",
+                            "type": "text",
+                            "options": {
+                                "type": "number",
+                                "required": true
+                            }
+                        },
+                        {
+                            "name": "title",
+                            "label": "Title",
+                            "type": "text"
+                        },
+                        {
+                            "name": "description",
+                            "label": "Description",
+                            "type": "wysiwyg"
                         }
-                    }
+                    ]
                 },
                 "width": "1-1",
                 "lst": true,
                 "acl": [],
-                "required": true
+                "required": false
             },
             {
                 "name": "hideDurations",
@@ -2010,7 +2036,8 @@
                 "options": [],
                 "width": "1-1",
                 "lst": true,
-                "acl": []
+                "acl": [],
+                "required": false
             }
         ],
         "group": "Products"
