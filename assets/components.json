@@ -1964,6 +1964,11 @@
                 "options": {
                     "fields": [
                         {
+                            "name": "enabled",
+                            "label": "Enabled",
+                            "type": "boolean"
+                        },
+                        {
                             "name": "duration",
                             "label": "Duration (Minutes)",
                             "type": "text",
@@ -1999,6 +2004,11 @@
                 "localize": false,
                 "options": {
                     "fields": [
+                        {
+                            "name": "enabled",
+                            "label": "Enabled",
+                            "type": "boolean"
+                        },
                         {
                             "name": "duration",
                             "label": "Duration (Minutes)",
