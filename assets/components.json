@@ -1967,6 +1967,7 @@
                             "name": "duration",
                             "label": "Duration (Minutes)",
                             "type": "text",
+                            "width": "1-2",
                             "options": {
                                 "type": "number",
                                 "required": true
