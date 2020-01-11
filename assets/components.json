@@ -1959,7 +1959,7 @@
                 "type": "set",
                 "default": "",
                 "info": "Provide a description or instructions for the beginning of the trip.",
-                "group": "",
+                "group": "Start",
                 "localize": false,
                 "options": {
                     "fields": [
@@ -1967,7 +1967,6 @@
                             "name": "duration",
                             "label": "Duration (Minutes)",
                             "type": "text",
-                            "width": "1-2",
                             "options": {
                                 "type": "number",
                                 "required": true
@@ -1996,7 +1995,7 @@
                 "type": "set",
                 "default": "",
                 "info": "Provide a description or instructions for the end of the trip.",
-                "group": "",
+                "group": "End",
                 "localize": false,
                 "options": {
                     "fields": [
