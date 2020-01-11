@@ -889,7 +889,7 @@
                         "fullheight-with-navbar": "Full Height"
                     }
                 },
-                "width": "3-4",
+                "width": "1-4",
                 "lst": true,
                 "acl": [],
                 "required": true
@@ -915,7 +915,7 @@
                         "black": "Black"
                     }
                 },
-                "width": "1-4",
+                "width": "3-4",
                 "lst": true,
                 "acl": []
             },
@@ -928,7 +928,7 @@
                 "group": "Background",
                 "localize": false,
                 "options": [],
-                "width": "1-2",
+                "width": "1-4",
                 "lst": true,
                 "acl": []
             },
