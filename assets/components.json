@@ -889,7 +889,7 @@
                         "fullheight-with-navbar": "Full Height"
                     }
                 },
-                "width": "1-1",
+                "width": "3-4",
                 "lst": true,
                 "acl": [],
                 "required": true
@@ -915,7 +915,7 @@
                         "black": "Black"
                     }
                 },
-                "width": "1-2",
+                "width": "1-4",
                 "lst": true,
                 "acl": []
             },
@@ -1019,7 +1019,7 @@
                 "label": "Video",
                 "type": "set",
                 "default": "",
-                "info": "Video files must be under 10MB",
+                "info": "Video files must be under 10MB. Both MPEG and WebM are required for background videos to work.",
                 "group": "Video",
                 "localize": false,
                 "options": {
