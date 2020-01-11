@@ -915,7 +915,7 @@
                         "black": "Black"
                     }
                 },
-                "width": "1-1",
+                "width": "1-2",
                 "lst": true,
                 "acl": []
             },
@@ -928,7 +928,7 @@
                 "group": "Background",
                 "localize": false,
                 "options": [],
-                "width": "1-1",
+                "width": "1-2",
                 "lst": true,
                 "acl": []
             },
