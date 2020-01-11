@@ -900,7 +900,7 @@
                 "type": "select",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Background",
                 "localize": false,
                 "options": {
                     "options": {
@@ -925,7 +925,7 @@
                 "type": "boolean",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Background",
                 "localize": false,
                 "options": [],
                 "width": "1-1",
@@ -1007,7 +1007,7 @@
                 "type": "asset",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Background",
                 "localize": false,
                 "options": [],
                 "width": "1-1",
@@ -1020,7 +1020,7 @@
                 "type": "set",
                 "default": "",
                 "info": "Video files must be under 10MB",
-                "group": "",
+                "group": "Video",
                 "localize": false,
                 "options": {
                     "fields": [
@@ -1955,7 +1955,7 @@
             },
             {
                 "name": "start",
-                "label": "Start",
+                "label": "Start Description",
                 "type": "set",
                 "default": "",
                 "info": "Provide a description or instructions for the beginning of the trip.",
@@ -1991,7 +1991,7 @@
             },
             {
                 "name": "end",
-                "label": "End",
+                "label": "End Description",
                 "type": "set",
                 "default": "",
                 "info": "Provide a description or instructions for the end of the trip.",
