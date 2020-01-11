@@ -991,11 +991,13 @@
                 "info": "Include only highly recognizable icons of trust.",
                 "group": "",
                 "localize": false,
+                "display": "display",
                 "options": {
                     "field": {
                         "type": "set",
                         "name": "icon",
                         "label": "icon",
+                        "display": "name",
                         "options": {
                             "fields": [
                                 {
