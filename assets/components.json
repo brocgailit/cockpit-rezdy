@@ -2215,24 +2215,6 @@
                 "acl": []
             },
             {
-                "name": "attractions",
-                "label": "Attractions",
-                "type": "collectionlink",
-                "default": "",
-                "info": "",
-                "group": "",
-                "localize": false,
-                "options": {
-                    "link": "attractions",
-                    "multiple": true,
-                    "display": "name"
-                },
-                "width": "1-1",
-                "lst": true,
-                "acl": [],
-                "required": true
-            },
-            {
                 "name": "zoom",
                 "label": "Zoom Level",
                 "type": "text",
