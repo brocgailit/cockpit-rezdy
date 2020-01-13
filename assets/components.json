@@ -2156,11 +2156,13 @@
                 "info": "",
                 "group": "Routes",
                 "localize": false,
+                "display": "display",
                 "options": {
                     "field": {
                         "type": "set",
                         "name": "route",
                         "label": "Route",
+                        "display": "display.name",
                         "options": {
                             "fields": [
                                 {
