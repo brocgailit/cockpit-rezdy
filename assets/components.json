@@ -2154,7 +2154,7 @@
                 "type": "repeater",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Routes",
                 "localize": false,
                 "options": {
                     "field": {
@@ -2220,7 +2220,7 @@
                 "type": "text",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Settings",
                 "localize": false,
                 "options": {
                     "default": 14,
@@ -2240,7 +2240,7 @@
                 "type": "location",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Settings",
                 "localize": false,
                 "options": [],
                 "width": "1-1",
@@ -2253,7 +2253,7 @@
                 "type": "asset",
                 "default": "",
                 "info": "",
-                "group": "",
+                "group": "Routes",
                 "localize": false,
                 "options": [],
                 "width": "1-1",
