@@ -1,3 +1,185 @@
 {
-
+    "rezdyProductVideo": {
+        "label": "Rezdy Product Video",
+        "dialog": "normal",
+        "children": false,
+        "icon": "data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='video' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' class='svg-inline--fa fa-video fa-w-18 fa-9x'%3E%3Cpath fill='currentColor' d='M543.9 96c-6.2 0-12.5 1.8-18.2 5.7L416 171.6v-59.8c0-26.4-23.2-47.8-51.8-47.8H51.8C23.2 64 0 85.4 0 111.8v288.4C0 426.6 23.2 448 51.8 448h312.4c28.6 0 51.8-21.4 51.8-47.8v-59.8l109.6 69.9c5.7 4 12.1 5.7 18.2 5.7 16.6 0 32.1-13 32.1-31.5v-257c.1-18.5-15.4-31.5-32-31.5zM384 400.2c0 8.6-9.1 15.8-19.8 15.8H51.8c-10.7 0-19.8-7.2-19.8-15.8V111.8c0-8.6 9.1-15.8 19.8-15.8h312.4c10.7 0 19.8 7.2 19.8 15.8v288.4zm160-15.7l-1.2-1.3L416 302.4v-92.9L544 128v256.5z' class=''%3E%3C/path%3E%3C/svg%3E",
+        "fields": [
+            {
+                "name": "product",
+                "label": "Product",
+                "type": "fetch-autocomplete",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "param": "search",
+                    "root": "products",
+                    "value": "productCode",
+                    "title": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Rezdy"
+    },
+    "rezdyProductGallery": {
+        "label": "Rezdy Product Images",
+        "dialog": "normal",
+        "children": false,
+        "icon": "data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='images' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' class='svg-inline--fa fa-images fa-w-18 fa-9x'%3E%3Cpath fill='currentColor' d='M528 32H112c-26.51 0-48 21.49-48 48v16H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-16h16c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm-48 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V144c0-8.822 7.178-16 16-16h16v240c0 26.51 21.49 48 48 48h368v16zm64-64c0 8.822-7.178 16-16 16H112c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h416c8.822 0 16 7.178 16 16v288zM176 200c30.928 0 56-25.072 56-56s-25.072-56-56-56-56 25.072-56 56 25.072 56 56 56zm0-80c13.234 0 24 10.766 24 24s-10.766 24-24 24-24-10.766-24-24 10.766-24 24-24zm240.971 23.029c-9.373-9.373-24.568-9.373-33.941 0L288 238.059l-31.029-31.03c-9.373-9.373-24.569-9.373-33.941 0l-88 88A24.002 24.002 0 0 0 128 312v28c0 6.627 5.373 12 12 12h360c6.627 0 12-5.373 12-12v-92c0-6.365-2.529-12.47-7.029-16.971l-88-88zM480 320H160v-4.686l80-80 48 48 112-112 80 80V320z' class=''%3E%3C/path%3E%3C/svg%3E",
+        "fields": [
+            {
+                "name": "product",
+                "label": "Product",
+                "type": "fetch-autocomplete",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "param": "search",
+                    "root": "products",
+                    "value": "productCode",
+                    "title": "name"
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Rezdy"
+    },
+    "productSchedule": {
+        "label": "Rezdy Product Schedule",
+        "dialog": "normal",
+        "children": false,
+        "icon": "data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='calendar-week' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='svg-inline--fa fa-calendar-week fa-w-14 fa-9x'%3E%3Cpath fill='currentColor' d='M400 64h-48V8c0-4.4-3.6-8-8-8h-16c-4.4 0-8 3.6-8 8v56H128V8c0-4.4-3.6-8-8-8h-16c-4.4 0-8 3.6-8 8v56H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm16 400c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V192h384v272zm0-304H32v-48c0-8.8 7.2-16 16-16h352c8.8 0 16 7.2 16 16v48zM80 352h288c8.8 0 16-7.2 16-16v-96c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16zm16-96h256v64H96v-64z' class=''%3E%3C/path%3E%3C/svg%3E",
+        "fields": [
+            {
+                "name": "products",
+                "label": "",
+                "type": "collectionlink",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "link": "products",
+                    "display": "name",
+                    "multiple": true
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            },
+            {
+                "name": "weeks",
+                "label": "Weeks",
+                "type": "text",
+                "default": "",
+                "info": "How far out should the schedule go?",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "min": 1,
+                    "max": 52,
+                    "default": 6
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            },
+            {
+                "name": "limit",
+                "label": "Limit Results",
+                "type": "text",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "type": "number",
+                    "min": 0,
+                    "default": 100
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": []
+            }
+        ],
+        "group": "Products"
+    },
+    "rezdyGiftCards": {
+        "label": "Rezdy Gift Cards",
+        "dialog": "normal",
+        "children": false,
+        "icon": "data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='gift-card' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' class='svg-inline--fa fa-gift-card fa-w-18 fa-9x'%3E%3Cpath fill='currentColor' d='M528 128h-71.3c9.5-13.4 15.3-29.9 15.3-48 0-44.1-33.4-80-74.5-80-42.3 0-66.8 25.4-109.5 95.8C245.3 25.4 220.8 0 178.5 0 137.4 0 104 35.9 104 80c0 18.1 5.8 34.6 15.3 48H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm-219.8-3.6c49.5-83.3 66-92.4 89.3-92.4 23.4 0 42.5 21.5 42.5 48s-19.1 48-42.5 48H306l2.2-3.6zM178.5 32c23.4 0 39.8 9.1 89.3 92.4l2.1 3.6h-91.5c-23.4 0-42.5-21.5-42.5-48 .1-26.5 19.2-48 42.6-48zM544 464c0 8.82-7.18 16-16 16H48c-8.82 0-16-7.18-16-16v-32h512v32zm0-64H32v-64h512v64zm0-96H32V176c0-8.84 7.16-16 16-16h201.38l-79.03 79.03c-3.12 3.12-3.12 8.19 0 11.31l11.31 11.31c3.12 3.12 8.19 3.12 11.31 0L288 166.62l95.03 95.03c3.12 3.12 8.19 3.12 11.31 0l11.31-11.31c3.12-3.12 3.12-8.19 0-11.31L326.62 160H528c8.84 0 16 7.16 16 16v128z' class=''%3E%3C/path%3E%3C/svg%3E",
+        "fields": [
+            {
+                "name": "cards",
+                "label": "Gift Cards",
+                "type": "repeater",
+                "default": "",
+                "info": "",
+                "group": "",
+                "localize": false,
+                "options": {
+                    "field": {
+                        "type": "set",
+                        "name": "card",
+                        "label": "Gift Card",
+                        "options": {
+                            "fields": [
+                                {
+                                    "name": "productCode",
+                                    "type": "fetch-autocomplete",
+                                    "label": "Rezdy Gift Card",
+                                    "options": {
+                                        "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                                        "param": "search",
+                                        "root": "products",
+                                        "value": "productCode",
+                                        "title": "name",
+                                        "filter": {
+                                            "key": "productType",
+                                            "value": "GIFT_CARD"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "title",
+                                    "label": "Title",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "description",
+                                    "label": "Brief Description",
+                                    "type": "wysiwyg",
+                                    "options": {
+                                        "editor": {
+                                            "format": "basic"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "width": "1-1",
+                "lst": true,
+                "acl": [],
+                "required": true
+            }
+        ],
+        "group": "Rezdy"
+    }
 }
