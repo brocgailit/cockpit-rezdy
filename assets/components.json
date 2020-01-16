@@ -14,7 +14,7 @@
                 "group": "",
                 "localize": false,
                 "options": {
-                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "url": "\/api\/products?token=e862c42a7546ab106a08d6679f568b",
                     "param": "search",
                     "root": "products",
                     "value": "productCode",
@@ -42,7 +42,7 @@
                 "group": "",
                 "localize": false,
                 "options": {
-                    "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                    "url": "\/api\/products?token=e862c42a7546ab106a08d6679f568b",
                     "param": "search",
                     "root": "products",
                     "value": "productCode",
@@ -144,7 +144,7 @@
                                     "type": "fetch-autocomplete",
                                     "label": "Rezdy Gift Card",
                                     "options": {
-                                        "url": "https:\/\/electrictourcompany.heavycraft.io\/api\/products?token=e862c42a7546ab106a08d6679f568b",
+                                        "url": "\/api\/products?token=e862c42a7546ab106a08d6679f568b",
                                         "param": "search",
                                         "root": "products",
                                         "value": "productCode",
