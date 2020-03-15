@@ -25,7 +25,7 @@ class BookingsApi extends Controller {
 	public function booking($order_number = '') {
 		if($this->req_is('put')) {
 			$data = json_decode(file_get_contents('php://input'), true);
-			return $this->rezdy->put('', $data);
+			return $this->rezdy->put($order_number, $data);
 		}
 
 		if($this->req_is('post')) {
